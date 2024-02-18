@@ -103,19 +103,3 @@ function onImageClick(evt) {
   }
     
   }
-//   if (evt.target == evt.currentTarget) {
-//     const largeImageSorce = evt.target.getAttribute("href");
-//     const descriptionImg = evt.target.getAttribute('alt');
-//     const instance = basicLightbox.create(`
-//     <div className="modal">
-//       <img
-//         data-source="large-image.jpg"
-//         src=${largeImageSorce}
-//         alt=${descriptionImg}
-//         width="1112"
-//         height="640"
-//         />
-//        </div>
-// `);
-//     instance.show()
-//   }
