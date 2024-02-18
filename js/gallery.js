@@ -83,13 +83,13 @@ gallery.addEventListener("click", onImageClick);
 
 function onImageClick(evt) {
   evt.preventDefault();
-  console.log("click on: ", evt.target);
-  
-  if (evt.target == evt.currentTarget) {
-    const largeImageSorce = evt.target.getAttribute("href");
-    const descriptionImg = evt.target.getAttribute('alt');
-    basicLightbox.create(`
-    // <div class="modal">
+  if (evt.target.dataset.source) { 
+    console.log("click on: ", evt.target);
+    const galleryLink = evt.target.closest(".gallery-link");
+    const largeImageSorce = galleryLink.getAttribute("href");
+    const descriptionImg = galleryLink.getAttribute('alt');
+    const instance = basicLightbox.create(`
+    <div className="modal">
       <img
         data-source="large-image.jpg"
         src=${largeImageSorce}
@@ -97,7 +97,25 @@ function onImageClick(evt) {
         width="1112"
         height="640"
         />
-        // </div>
-`).show()
+       </div>
+`);
+    instance.show()
   }
-}
+    
+  }
+//   if (evt.target == evt.currentTarget) {
+//     const largeImageSorce = evt.target.getAttribute("href");
+//     const descriptionImg = evt.target.getAttribute('alt');
+//     const instance = basicLightbox.create(`
+//     <div className="modal">
+//       <img
+//         data-source="large-image.jpg"
+//         src=${largeImageSorce}
+//         alt=${descriptionImg}
+//         width="1112"
+//         height="640"
+//         />
+//        </div>
+// `);
+//     instance.show()
+//   }
